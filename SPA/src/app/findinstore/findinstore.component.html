@@ -1,0 +1,45 @@
+<div id="search-component">
+  <h4>Find products in store</h4>
+  <table>
+    <tr>
+      <td>
+          <div class="form-group">
+              <label>Sku</label>
+              <br/>
+              <input #sku id="search-box"  />
+            </div>
+            <br/>
+            <div class="form-group">
+             <label>Zipcode</label>
+             <br/>
+             <input #zip id="search-box"  />
+           </div>
+           <br/>
+           <div class="form-group">
+             <label>Radius</label>
+             <br/>
+             <input #radius id="search-box"  />
+           </div>
+      </td>
+      <td style="padding-left: 2in!important;">
+          <label *ngIf = "products">Results:</label>
+          <br/>
+          <ul >
+              <li *ngFor="let product of products" >
+               
+                  {{product.id}}
+                
+              </li>
+            </ul>
+      </td>
+    </tr>
+  </table>
+ 
+  
+<br/>
+<button class="clear"
+          (click)="GetProducts(sku.value, zip.value, radius.value)">Submit</button>
+          &nbsp; <button class="clear"
+    (click)="clearResults()">Clear</button>
+  
+</div>
