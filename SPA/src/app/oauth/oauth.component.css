@@ -11,7 +11,7 @@ h4 {
 }
 div.scrollable {
     width: 100%;
-    height: 333px;
+    /*height: 500px;*/
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -28,7 +28,6 @@ table{
 */   width: intrinsic;
    width: -moz-max-content;
    width: 100%;
-       margin-left: 78px;
 }
 td{
     display: table-cell;
@@ -38,11 +37,11 @@ td{
 }
 ul{
     overflow: scroll;
-    height: 209px;
+    height: 109px;
 }
-
  .form-group{
   margin-bottom: 16px;
+  margin-top: 20px;
  }
 input.search-box{
     -webkit-appearance: textfield;
@@ -104,7 +103,7 @@ button:focus {
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: inherit;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -186,4 +185,8 @@ ul[_ngcontent-c2] {
 }
 .row-message,.store-address{
   margin-bottom: 10px;
+}
+
+.header-token{
+  width: 100%
 }

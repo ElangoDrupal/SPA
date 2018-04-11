@@ -1,0 +1,106 @@
+<div id="search-component">
+     <h4>Example 2: ADD TO CART</h4>
+<table>
+<tr>
+      <td>
+<div class="list-item" name="1031616">
+    <div class="list-item-thumbnail item-image">
+        <div class="thumb">
+            <a href="https://www.sephora.com/product/amazing-grace-eau-de-toilette-P33801?skuId&#x3D;1031616" data-rank="pdp" as-t="1031616">
+
+                <img src="https://www.sephora.com/productimages/sku/s1031616-main-hero.jpg" />
+
+            </a>
+        </div>
+    </div>
+    <div class="list-item-info">
+        <div class="list-item-details">
+            <div class="sku-title" itemprop="name">
+                <h4><a href="https://www.sephora.com/product/amazing-grace-eau-de-toilette-P33801?skuId&#x3D;1031616" class="brand-name" data-rank="pdp" as-t="1031616">philosophy</a></h4>
+                <h4><a href="https://www.sephora.com/product/amazing-grace-eau-de-toilette-P33801?skuId&#x3D;1031616" data-rank="pdp" as-t="1031616">Amazing Grace Eau de Toilette</a></h4>
+            </div>
+            <div class="sku-model">
+
+                Size <span itemprop="size"> 4 oz/ 118 mL </span> ·
+                ITEM <span itemprop="sku"> 1031616 </span>
+            </div>
+            <div class="sku-color">
+
+
+            </div>
+
+            <div class="sku-custom-tags">
+                <span class="tag" data-vis="False">exclusive<span class="custom-dot">·</span></span>
+                <span class="tag" data-vis="False">limited edition<span class="custom-dot">·</span></span>
+                <span class="tag" data-vis="False">buzzworthy<span class="custom-dot">·</span></span>
+                <span class="tag" data-vis="False">online only</span>
+            </div>
+
+
+            <div class="customer-rating" itemprop="aggregateRating" itemscope="rating" itemtype="//schema.org/AggregateRating">
+                <meta itemprop="worstRating" content="1" />
+                <meta itemprop="bestRating" content="5" />
+                <a href="https://www.sephora.com/product/amazing-grace-eau-de-toilette-P33801?skuId&#x3D;1031616" data-rank="reviews" class="ratings-reviews-link tab-link" as-t="1031616">
+                    <ul class="list-unstyled">
+
+                        <li class="rating-stars">
+                            <span class="rating-backing" style="width: 100%">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                            <span class="rating-fill" style="width: 80%">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </li>
+
+                    </ul>
+                    <span class="average-score" itemprop="ratingValue" aria-label="4.0 out of 5 stars"><strong>4.0 / 5 stars</strong></span>
+                    <span class="ratings-count">(1496 Reviews)</span>
+                </a>
+                <meta itemprop="reviewCount" content="1496" />
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+        <div class="list-item-price">            <br/>
+            
+          
+            <button class="clear"  (click)="myFunction()" style="margin-top: 10px;background: red;">Add to Basket</button>
+            <button class="clear"(click)="clearResults()">Clear</button>
+
+            <div class="clearfix"></div>
+        </div>
+        
+        <div class="short-description">
+
+            <div class="featuredQuotes">"My fav...In Love...<span class="as-feature-quote">I LIKE IT BECAUSE IT'S A <strong>SOFT SCENT</strong>.</span>...I loved this perfume for so long but what really sold me on it was that fact that it has become a signature sent for me without me even knowing it."</div>
+
+            <!--<span class="desc-title">What it is:</span>-->
+            <div class="description"><b>Fragrance Family:</b><br> Floral<br><br><b>Scent Type:</b><br> Powdery Florals<br><br><b>Key Notes:</b><br> Lily of the Valley, Musk<br><br><b>About:</b><br> Embrace your beauty and express your femininity with Amazing Grace Eau de Toilette. Philosophy’s bestselling, amazingly clean, and beautifully feminine scent features notes of welcoming bergamot to greet the senses, irresistibly soft, clean muguet blossoms, and lasting musk with its classic beauty. </div>
+        </div>
+    </div>
+</div>
+
+</td>
+
+<td>
+<div *ngIf = "display" class="form-group" >  
+<div class="addtocart-result">
+<h3>
+  <p> Item added to basket, {{data.rawSubTotal}} </p>
+</h3>
+</div>
+</div>
+</td>
+</tr>
+
+</table>
+</div>
+

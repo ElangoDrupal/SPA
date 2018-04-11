@@ -1,45 +1,80 @@
 <div id="search-component">
-  <h4>Find products in store</h4>
-  <table>
+          <h4>Example 1: FIND PRODUCT IN STORE</h4>
+  <table > 
     <tr>
       <td>
+
           <div class="form-group">
               <label>Sku</label>
               <br/>
-              <input #sku id="search-box"  />
+              <input #sku class="search-box"  name="skuid" placeholder="SKU" />
+              <label> Example: 761213</label>
             </div>
             <br/>
             <div class="form-group">
              <label>Zipcode</label>
              <br/>
-             <input #zip id="search-box"  />
+             <input #zip class="search-box" placeholder="Zipcode" />
+             <label>Example: 94105</label>
            </div>
            <br/>
-           <div class="form-group">
+           <div class="form-group" >
              <label>Radius</label>
              <br/>
-             <input #radius id="search-box"  />
+             <input #radius class="search-box" placeholder="Radius" />
+             <label>Example: 5, 10, 25</label>
+           </div>
+           <div class="form-group" >
+             <button class="clear"(click)="GetProducts(sku.value, zip.value, radius.value)"
+             >Submit</button>
+             &nbsp; 
+             <button class="clear"(click)="clearResults()">Clear</button>
            </div>
       </td>
-      <td style="padding-left: 2in!important;">
-          <label *ngIf = "products">Results:</label>
+  
+      <td> 
+      <div *ngIf = "display" class="form-group" class = scrollable>  
+        <div *ngIf = "products.storeMessages ; else error">Results:
           <br/>
-          <ul >
-              <li *ngFor="let product of products" >
-               
-                  {{product.id}}
-                
-              </li>
-            </ul>
+                    <ul >
+               <div class="row-message"> <strong>{{products.storeMessages[0].messages}}</strong>  </div>
+                <ol>
+                    <li *ngFor="let product of products.stores" >
+                          <div class="store-address">
+                             <strong>{{product.displayName}}</strong>
+                             <div class="row"> {{product.address.address1}}</div>
+                             <div class="row">{{product.address.city}}, {{product.address.state}} {{product.address.postalCode}}</div>
+                             <div class="row">       {{product.address.country}}</div>
+                             <div class="row-phonenumber">    {{product.address.phone}}  </div>
+                          </div>
+                    </li> 
+                </ol>   
+          </ul>
+          </div>
+      </div>
+        <ng-template #error>
+        <div *ngIf = "products.errorCode ; else fatalerror">Error:
+          <ul>
+             <li><strong> Error Code </strong>: {{products.errorCode}}</li>
+             <li><strong>Error Message </strong>: {{products.errorMessages}}</li>
+
+          </ul>    
+        </div>
+        </ng-template>
+
+        <ng-template #fatalerror>            
+               <div *ngIf = "msg.statusText   ; else loading" >Error:
+                <li><strong>Error errorcode</strong> : {{msg.error.errorCode || msg.status}}</li>
+                <li><strong>Error Messages</strong> : {{msg.error.errorMessages || msg.error.fault.faultstring}}</li>
+             
+              </div>
+       </ng-template>
+
+        <ng-template #loading> 
+              Loading...
+        </ng-template>
+        
       </td>
     </tr>
-  </table>
- 
-  
-<br/>
-<button class="clear"
-          (click)="GetProducts(sku.value, zip.value, radius.value)">Submit</button>
-          &nbsp; <button class="clear"
-    (click)="clearResults()">Clear</button>
-  
+  </table> 
 </div>

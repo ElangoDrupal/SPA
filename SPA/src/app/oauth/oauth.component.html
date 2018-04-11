@@ -1,0 +1,58 @@
+<div id="search-component">
+
+
+	<h4>GENERATE YOUR OAUTH TOKEN</h4>
+		<table>
+			<tr>
+				<td>
+					<div class="form-group">
+						<label> Enter Your Consumer Key </label>
+						<br/>
+						<input #clientid  class="search-box" name="clientid" placeholder="Consumer Key" />	
+					</div>
+					<div class="form-group">
+						<label> Enter Your Secret Key</label>
+						<br/>
+						<input type="password" #secretkey class="search-box" name="secretkey"  placeholder="Secret Key" />
+					</div>
+					<div class="form-group">
+						<button class="clear"(click)="GetHeader(clientid.value, secretkey.value)"> Submit </button>
+						&nbsp; 
+             			<button class="clear"(click)="clearResults()">Clear</button>
+					</div>
+				</td>
+				<td>
+					<!-- <div *ngIf = "display" class="form-group" class = scrollable> 
+						<div class="row"><strong>Access Token Top :</strong>{{oauthkey.access_token}}</div>
+						<br/>
+						<div class="row"><strong>Expiress in Top :</strong>{{(oauthkey.expires_in/3600 % 24).toFixed(0)}} Hours</div>
+					</div>	 -->
+				</td>		
+			</tr>	
+		</table>
+			   <div class="dropdown"> 
+               <span>Headers</span>
+               <div class="dropdown-content">
+          
+                     <div class="form-group">
+                       <label>ACCESS TOKEN</label>
+                       <br/>
+                       <input #Authorization class="search-box" class="header-token" name="Authorization" placeholder="ACCESS TOKEN" />
+                     </div>
+                      
+                     <div class="form-group" >
+                           <button class="clear"(click)="SaveHeaders(Authorization.value)"
+                           >Save Header </button>
+                       
+                     </div>       
+               </div>
+               </div>
+
+               	<div *ngIf = "display" class="form-group" > 
+							<div class="row"><strong>Access Token: </strong>{{oauthkey.access_token}}</div>
+							<br/>
+							<div class="row"><strong>Expiress in: </strong>{{(oauthkey.expires_in/3600 % 24).toFixed(0)}} Hours</div>
+		        </div>	
+          
+</div>
+

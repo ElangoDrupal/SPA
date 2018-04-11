@@ -28,7 +28,7 @@ table{
 */   width: intrinsic;
    width: -moz-max-content;
    width: 100%;
-       margin-left: 78px;
+           margin-left: 78px;
 }
 td{
     display: table-cell;
